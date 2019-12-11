@@ -28,18 +28,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <app-customer></app-customer>\n</div>\n\n");
-            /***/ 
-        }),
-        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/customers/customer.component.html": 
-        /*!*****************************************************************************************!*\
-          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/customers/customer.component.html ***!
-          \*****************************************************************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\n  <div class=\"card-header\">\n    Sign Up!\n  </div>\n\n  <div class=\"card-body\">\n    <form novalidate\n          (ngSubmit)=\"save()\"\n          [formGroup]=\"customerForm\">\n\n      <div class=\"form-group row mb-2\">\n        <label class=\"col-md-2 col-form-label\"\n               for=\"firstNameId\">First Name</label>\n        <div class=\"col-md-8\">\n          <input class=\"form-control\"\n                 id=\"firstNameId\"\n                 type=\"text\"\n                 placeholder=\"First Name (required)\"\n                 formControlName=\"firstName\"\n                 [ngClass]=\"{'is-invalid': (customerForm.get('firstName').touched ||\n                                            customerForm.get('firstName').dirty) &&\n                                            !customerForm.get('firstName').valid }\" />\n          <span class=\"invalid-feedback\">\n            <span *ngIf=\"customerForm.get('firstName').errors?.required\">\n              Please enter your first name.\n            </span>\n            <span *ngIf=\"customerForm.get('firstName').errors?.minlength\">\n              The first name must be longer than 3 characters.\n            </span>\n          </span>\n        </div>\n      </div>\n\n      <div class=\"form-group row mb-2\">\n        <label class=\"col-md-2 col-form-label\"\n               for=\"lastNameId\">Last Name</label>\n        <div class=\"col-md-8\">\n          <input class=\"form-control\"\n                 id=\"lastNameId\"\n                 type=\"text\"\n                 placeholder=\"Last Name (required)\"\n                 formControlName=\"lastName\"\n                 [ngClass]=\"{'is-invalid': (customerForm.get('lastName').touched ||\n                                            customerForm.get('lastName').dirty) &&\n                                            !customerForm.get('lastName').valid }\" />\n          <span class=\"invalid-feedback\">\n            <span *ngIf=\"customerForm.get('lastName').errors?.required\">\n              Please enter your last name.\n            </span>\n            <span *ngIf=\"customerForm.get('lastName').errors?.maxlength\">\n              The last name must be less than 50 characters.\n            </span>\n          </span>\n        </div>\n      </div>\n\n      <div formGroupName=\"emailGroup\">\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"emailId\">Email</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   id=\"emailId\"\n                   type=\"email\"\n                   placeholder=\"Email (required)\"\n                   formControlName=\"email\"\n                   [ngClass]=\"{'is-invalid': emailMessage }\" />\n            <span class=\"invalid-feedback\">\n              {{ emailMessage }}\n            </span>\n          </div>\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <label class=\"col-md-2 col-form-label\"\n                 for=\"confirmEmailId\">Confirm Email</label>\n          <div class=\"col-md-8\">\n            <input class=\"form-control\"\n                   id=\"confirmEmailId\"\n                   type=\"email\"\n                   placeholder=\"Confirm Email (required)\"\n                   formControlName=\"confirmEmail\"\n                   [ngClass]=\"{'is-invalid': customerForm.get('emailGroup').errors ||\n                                             ((customerForm.get('emailGroup.confirmEmail').touched || \n                                              customerForm.get('emailGroup.confirmEmail').dirty) && \n                                              !customerForm.get('emailGroup.confirmEmail').valid) }\" />\n            <span class=\"invalid-feedback\">\n              <span *ngIf=\"customerForm.get('emailGroup.confirmEmail').errors?.required\">\n                Please confirm your email address.\n              </span>\n              <span *ngIf=\"customerForm.get('emailGroup').errors?.match\">\n                The confirmation does not match the email address.\n              </span>\n            </span>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"form-group row mb-2\">\n        <label class=\"col-md-2 col-form-label\"\n               for=\"phoneId\">Phone</label>\n        <div class=\"col-md-8\">\n          <input class=\"form-control\"\n                 id=\"phoneId\"\n                 type=\"tel\"\n                 placeholder=\"Phone\"\n                 formControlName=\"phone\"\n                 [ngClass]=\"{'is-invalid': !customerForm.get('phone').valid }\" />\n          <span class=\"invalid-feedback\">\n            <span *ngIf=\"customerForm.get('phone').errors?.required\">\n              Please enter your phone number.\n            </span>\n          </span>\n        </div>\n      </div>\n\n      <div class=\"form-group row mb-2\">\n        <label class=\"col-md-2 col-form-label pt-0\">Send Notifications</label>\n        <div class=\"col-md-8\">\n          <div class=\"form-check form-check-inline\">\n            <label class=\"form-check-label\">\n              <input class=\"form-check-input\"\n                     type=\"radio\"\n                     value=\"email\"\n                     formControlName=\"notification\">Email\n            </label>\n          </div>\n          <div class=\"form-check form-check-inline\">\n            <label class=\"form-check-label\">\n              <input class=\"form-check-input\"\n                     type=\"radio\"\n                     value=\"text\"\n                     formControlName=\"notification\">Text\n            </label>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"form-group row mb-2\">\n        <label class=\"col-md-2 col-form-label\"\n               for=\"ratingId\">Rating</label>\n        <div class=\"col-md-8\">\n          <input class=\"form-control\"\n                 id=\"ratingId\"\n                 type=\"number\"\n                 formControlName=\"rating\"\n                 [ngClass]=\"{'is-invalid': (customerForm.get('rating').touched || \n                                             customerForm.get('rating').dirty) && \n                                             !customerForm.get('rating').valid }\" />\n          <span class=\"invalid-feedback\">\n            <span *ngIf=\"customerForm.get('rating').errors?.range\">\n              Please rate your experience from 1 to 5.\n            </span>\n          </span>\n        </div>\n      </div>\n\n      <div class=\"form-group row mb-2\">\n        <div class=\"col-md-8\">\n          <div class=\"form-check\">\n            <label class=\"form-check-label\">\n              <input class=\"form-check-input\"\n                     id=\"sendCatalogId\"\n                     type=\"checkbox\"\n                     formControlName=\"sendCatalog\">Send me your catalog\n            </label>\n          </div>\n        </div>\n      </div>\n\n      <div *ngIf=\"customerForm.get('sendCatalog').value\">\n        <div formArrayName=\"addresses\">\n\n          <div [formGroupName]=\"i\"\n               *ngFor=\"let address of addresses.controls; let i=index\">\n            <div class=\"form-group row mb-2\">\n              <label class=\"col-md-2 col-form-label pt-0\">Address Type</label>\n              <div class=\"col-md-8\">\n                <div class=\"form-check form-check-inline\">\n                  <label class=\"form-check-label\">\n                    <input class=\"form-check-input\"\n                           id=\"addressType1Id\"\n                           type=\"radio\"\n                           value=\"home\"\n                           formControlName=\"addressType\"> Home\n                  </label>\n                </div>\n                <div class=\"form-check form-check-inline\">\n                  <label class=\"form-check-label\">\n                    <input class=\"form-check-input\"\n                           id=\"addressType1Id\"\n                           type=\"radio\"\n                           value=\"work\"\n                           formControlName=\"addressType\"> Work\n                  </label>\n                </div>\n                <div class=\"form-check form-check-inline\">\n                  <label class=\"form-check-label\">\n                    <input class=\"form-check-input\"\n                           id=\"addressType1Id\"\n                           type=\"radio\"\n                           value=\"other\"\n                           formControlName=\"addressType\"> Other\n                  </label>\n                </div>\n              </div>\n            </div>\n\n            <div class=\"form-group row mb-2\">\n              <label class=\"col-md-2 col-form-label\"\n                     attr.for=\"{{'street1Id' + i}}\">Street Address 1</label>\n              <div class=\"col-md-8\">\n                <input class=\"form-control\"\n                       id=\"{{ 'street1Id' + i }}\"\n                       type=\"text\"\n                       placeholder=\"Street address (required)\"\n                       formControlName=\"street1\"\n                       [ngClass]=\"{'is-invalid': (address.controls.street1.touched || \n                                                  address.controls.street1.dirty) && \n                                                  !address.controls.street1.valid }\">\n                <span class=\"invalid-feedback\">\n                  <span *ngIf=\"address.controls.street1.errors?.required\">\n                    Please enter your street address.\n                  </span>\n                </span>\n              </div>\n            </div>\n\n            <div class=\"form-group row mb-2\">\n              <label class=\"col-md-2 col-form-label\"\n                     attr.for=\"{{'street2Id' + i}}\">Street Address 2</label>\n              <div class=\"col-md-8\">\n                <input class=\"form-control\"\n                       id=\"{{'street2Id' + i}}\"\n                       type=\"text\"\n                       placeholder=\"Street address (second line)\"\n                       formControlName=\"street2\">\n              </div>\n            </div>\n\n            <div class=\"form-group row mb-2\">\n              <label class=\"col-md-2 col-form-label\"\n                     attr.for=\"{{'cityId' + i}}\">City, State, Zip Code</label>\n              <div class=\"col-md-3\">\n                <input class=\"form-control\"\n                       id=\"{{'cityId' + i}}\"\n                       type=\"text\"\n                       placeholder=\"City\"\n                       formControlName=\"city\">\n              </div>\n              <div class=\"col-md-3\">\n                <select class=\"form-control\"\n                        id=\"{{'stateId' + i}}\"\n                        formControlName=\"state\">\n                  <option value=\"\"\n                          disabled\n                          selected\n                          hidden>Select a State...</option>\n                  <option value=\"AL\">Alabama</option>\n                  <option value=\"AK\">Alaska</option>\n                  <option value=\"AZ\">Arizona</option>\n                  <option value=\"AR\">Arkansas</option>\n                  <option value=\"CA\">California</option>\n                  <option value=\"CO\">Colorado</option>\n                  <option value=\"WI\">Wisconsin</option>\n                  <option value=\"WY\">Wyoming</option>\n                </select>\n              </div>\n              <div class=\"col-md-2\">\n                <input class=\"form-control\"\n                       id=\"{{'zipId' + i}}\"\n                       type=\"number\"\n                       placeholder=\"Zip Code\"\n                       formControlName=\"zip\">\n              </div>\n            </div>\n          </div>\n\n        </div>\n\n        <div class=\"form-group row mb-2\">\n          <div class=\"col-md-4\">\n            <button class=\"btn btn-outline-primary\"\n                    type=\"button\"\n                    [title]=\"addresses.valid ? 'Add another mailing address' : 'Disabled until the existing address data is valid'\"\n                    [disabled]=\"!addresses.valid\"\n                    (click)=\"addAddress()\">\n              Add Another Address\n            </button>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"form-group row mb-2\">\n        <div class=\"offset-md-2 col-md-4\">\n          <button class=\"btn btn-primary mr-3\"\n                  type=\"submit\"\n                  style=\"width:80px\"\n                  [title]=\"customerForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'\"\n                  [disabled]=\"!customerForm.valid\">\n            Save\n          </button>\n          <button class=\"btn btn-outline-secondary\"\n                  type=\"button\"\n                  (click)=\"populateTestData()\">\n            Test Data\n          </button>\n        </div>\n      </div>\n    </form>\n  </div>\n</div>\n<br>Dirty: {{ customerForm.dirty }}\n<br>Touched: {{ customerForm.touched }}\n<br>Valid: {{ customerForm.valid }}\n<br>Value: {{ customerForm.value | json }}\n<br>Street: {{ addresses.get('0.street1')?.value }}\n<br>&nbsp;");
+            /* harmony default export */ __webpack_exports__["default"] = ("<h2>{{title}}</h2>");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -342,6 +331,32 @@
             }
             /***/ 
         }),
+        /***/ "./src/app/app-routing.module.ts": 
+        /*!***************************************!*\
+          !*** ./src/app/app-routing.module.ts ***!
+          \***************************************/
+        /*! exports provided: AppRoutingModule */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function () { return AppRoutingModule; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            var routes = [];
+            var AppRoutingModule = /** @class */ (function () {
+                function AppRoutingModule() {
+                }
+                return AppRoutingModule;
+            }());
+            AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+                    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+                    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+                })
+            ], AppRoutingModule);
+            /***/ 
+        }),
         /***/ "./src/app/app.component.css": 
         /*!***********************************!*\
           !*** ./src/app/app.component.css ***!
@@ -366,7 +381,7 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             var AppComponent = /** @class */ (function () {
                 function AppComponent() {
-                    this.title = 'Demo';
+                    this.title = 'Jai Hanuman';
                 }
                 return AppComponent;
             }());
@@ -391,9 +406,8 @@
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
             /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-            /* harmony import */ var _customers_customer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./customers/customer.component */ "./src/app/customers/customer.component.ts");
             var AppModule = /** @class */ (function () {
                 function AppModule() {
                 }
@@ -402,192 +416,16 @@
             AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
                     declarations: [
-                        _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                        _customers_customer_component__WEBPACK_IMPORTED_MODULE_5__["CustomerComponent"]
+                        _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]
                     ],
                     imports: [
                         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                        _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+                        _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
                     ],
+                    providers: [],
                     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
                 })
             ], AppModule);
-            /***/ 
-        }),
-        /***/ "./src/app/customers/customer.component.css": 
-        /*!**************************************************!*\
-          !*** ./src/app/customers/customer.component.css ***!
-          \**************************************************/
-        /*! exports provided: default */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2N1c3RvbWVycy9jdXN0b21lci5jb21wb25lbnQuY3NzIn0= */");
-            /***/ 
-        }),
-        /***/ "./src/app/customers/customer.component.ts": 
-        /*!*************************************************!*\
-          !*** ./src/app/customers/customer.component.ts ***!
-          \*************************************************/
-        /*! exports provided: CustomerComponent */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerComponent", function () { return CustomerComponent; });
-            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-            /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-            /* harmony import */ var _customer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./customer */ "./src/app/customers/customer.ts");
-            function emailMatcher(c) {
-                var emailControl = c.get('email');
-                var confirmControl = c.get('confirmEmail');
-                if (emailControl.pristine || confirmControl.pristine) {
-                    return null;
-                }
-                if (emailControl.value === confirmControl.value) {
-                    return null;
-                }
-                return { match: true };
-            }
-            function ratingRange(min, max) {
-                return function (c) {
-                    if (c.value !== null && (isNaN(c.value) || c.value < min || c.value > max)) {
-                        return { range: true };
-                    }
-                    return null;
-                };
-            }
-            var CustomerComponent = /** @class */ (function () {
-                function CustomerComponent(fb) {
-                    this.fb = fb;
-                    this.customer = new _customer__WEBPACK_IMPORTED_MODULE_4__["Customer"]();
-                    this.validationMessages = {
-                        required: 'Please enter your email address.',
-                        email: 'Please enter a valid email address.'
-                    };
-                }
-                Object.defineProperty(CustomerComponent.prototype, "addresses", {
-                    get: function () {
-                        return this.customerForm.get('addresses');
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                CustomerComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this.customerForm = this.fb.group({
-                        firstName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
-                        lastName: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(50)]],
-                        emailGroup: this.fb.group({
-                            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
-                            confirmEmail: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-                        }, { validator: emailMatcher }),
-                        phone: '',
-                        notification: 'email',
-                        rating: [null, ratingRange(1, 5)],
-                        sendCatalog: true,
-                        addresses: this.fb.array([this.buildAddress()])
-                    });
-                    this.customerForm.get('notification').valueChanges.subscribe(function (value) { return _this.setNotification(value); });
-                    var emailControl = this.customerForm.get('emailGroup.email');
-                    emailControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(1000)).subscribe(function (value) { return _this.setMessage(emailControl); });
-                };
-                CustomerComponent.prototype.addAddress = function () {
-                    this.addresses.push(this.buildAddress());
-                };
-                CustomerComponent.prototype.buildAddress = function () {
-                    return this.fb.group({
-                        addressType: 'home',
-                        street1: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-                        street2: '',
-                        city: '',
-                        state: '',
-                        zip: ''
-                    });
-                };
-                CustomerComponent.prototype.populateTestData = function () {
-                    this.customerForm.patchValue({
-                        firstName: 'Jack',
-                        lastName: 'Harkness',
-                        emailGroup: { email: 'jack@torchwood.com', confirmEmail: 'jack@torchwood.com' }
-                    });
-                    var addressGroup = this.fb.group({
-                        addressType: 'work',
-                        street1: 'Mermaid Quay',
-                        street2: '',
-                        city: 'Cardiff Bay',
-                        state: 'CA',
-                        zip: ''
-                    });
-                    this.customerForm.setControl('addresses', this.fb.array([addressGroup]));
-                };
-                CustomerComponent.prototype.save = function () {
-                    console.log(this.customerForm);
-                    console.log('Saved: ' + JSON.stringify(this.customerForm.value));
-                };
-                CustomerComponent.prototype.setMessage = function (c) {
-                    var _this = this;
-                    this.emailMessage = '';
-                    if ((c.touched || c.dirty) && c.errors) {
-                        this.emailMessage = Object.keys(c.errors).map(function (key) { return _this.validationMessages[key]; }).join(' ');
-                    }
-                };
-                CustomerComponent.prototype.setNotification = function (notifyVia) {
-                    var phoneControl = this.customerForm.get('phone');
-                    if (notifyVia === 'text') {
-                        phoneControl.setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
-                    }
-                    else {
-                        phoneControl.clearValidators();
-                    }
-                    phoneControl.updateValueAndValidity();
-                };
-                return CustomerComponent;
-            }());
-            CustomerComponent.ctorParameters = function () { return [
-                { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
-            ]; };
-            CustomerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-                    selector: 'app-customer',
-                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./customer.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/customers/customer.component.html")).default,
-                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./customer.component.css */ "./src/app/customers/customer.component.css")).default]
-                })
-            ], CustomerComponent);
-            /***/ 
-        }),
-        /***/ "./src/app/customers/customer.ts": 
-        /*!***************************************!*\
-          !*** ./src/app/customers/customer.ts ***!
-          \***************************************/
-        /*! exports provided: Customer */
-        /***/ (function (module, __webpack_exports__, __webpack_require__) {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Customer", function () { return Customer; });
-            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-            var Customer = /** @class */ (function () {
-                function Customer(firstName, lastName, email, sendCatalog, addressType, street1, street2, city, state, zip) {
-                    if (firstName === void 0) { firstName = ''; }
-                    if (lastName === void 0) { lastName = ''; }
-                    if (email === void 0) { email = ''; }
-                    if (sendCatalog === void 0) { sendCatalog = false; }
-                    if (addressType === void 0) { addressType = 'home'; }
-                    if (state === void 0) { state = ''; }
-                    this.firstName = firstName;
-                    this.lastName = lastName;
-                    this.email = email;
-                    this.sendCatalog = sendCatalog;
-                    this.addressType = addressType;
-                    this.street1 = street1;
-                    this.street2 = street2;
-                    this.city = city;
-                    this.state = state;
-                    this.zip = zip;
-                }
-                return Customer;
-            }());
             /***/ 
         }),
         /***/ "./src/environments/environment.ts": 
@@ -642,7 +480,7 @@
           \***************************/
         /*! no static exports found */
         /***/ (function (module, exports, __webpack_require__) {
-            module.exports = __webpack_require__(/*! C:\Angular ReactiveForms\Angular-ReactiveForms-master\Demo-Final\src\main.ts */ "./src/main.ts");
+            module.exports = __webpack_require__(/*! C:\DataBinding\DataBinding\src\main.ts */ "./src/main.ts");
             /***/ 
         })
     }, [[0, "runtime", "vendor"]]]);
